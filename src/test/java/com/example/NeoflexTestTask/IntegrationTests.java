@@ -11,11 +11,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Optional;
-
 import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -64,7 +62,7 @@ public class IntegrationTests {
 	// Тест для проверки существования даты
 	@Test
 	public void testDateExists() throws Exception {
-		// Используем ваш класс Date
+
 		Date customDate = createCustomDate("01.01.2024");
 		dateRepository.save(customDate);
 
@@ -102,6 +100,6 @@ public class IntegrationTests {
 
 	// Метод для создания вашего кастомного Date
 	private Date createCustomDate(String dateStr) throws ParseException {
-		return new Date(dateStr); // Используем ваш конструктор с строкой
+		return new Date(dateStr);
 	}
 }
